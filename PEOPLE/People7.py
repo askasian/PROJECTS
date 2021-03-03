@@ -175,7 +175,7 @@ class Person():
                 Person.birth(pers1, pers2)
 
     def iskill(pers1, pers2):
-        if rnd(6) == 1:
+        if rnd(6) == 1:  # chance of kill, 15 < age < 90
             if 15 <= pers1.age <= 90 or 15 <= pers2.age <= 90:
                 if len(pers1.exp) > len(pers2.exp):
                     Person.kill(pers1, pers2)
