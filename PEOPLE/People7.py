@@ -7,9 +7,11 @@ unit = []
 year = 2000
 
 experience_to_show = 15
-initial_population = 6000
+initial_population = 7000
 sexs = ['male', 'female']
 cords = [100, 100]
+area = (cords[0] * cords[1])
+
 namef = [fake.first_name_male() for _ in range(40)]
 namem = [fake.first_name_female() for _ in range(40)]
 professions = [fake.job() for _ in range(40)]
@@ -210,7 +212,7 @@ class Person():
 for _ in range(initial_population):
     Person.create()
 
-while len(Person.Live) != 0 and len(Person.Live) < (cords[0] * cords[1]):
+while len(Person.Live) != 0 and len(Person.Live) < area:
     Person.move()
     Person.findmatch()
     Person.upd()
