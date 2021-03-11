@@ -4,7 +4,7 @@ from faker import Faker
 fake = Faker()
 stat = []
 unit = []
-year = 2000
+year = 3000
 
 experience_to_show = 15
 initial_population = 7000
