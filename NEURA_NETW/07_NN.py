@@ -1,3 +1,5 @@
+
+# %%
 import math
 import numpy as np
 import nnfs
@@ -13,4 +15,6 @@ exp_values = np.exp(layer_outputs)
 norm_values = exp_values / np.sum(exp_values, axis=1, keepdims=True)
 
 print(norm_values)
-print(sum(norm_values))
+
+# %%
+print(sum(exp_values))
