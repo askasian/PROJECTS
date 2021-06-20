@@ -35,9 +35,10 @@ df2.iplot(kind='bar', x='Category', y='Values')
 df.sum().iplot(kind='bar')
 # %%
 df.iplot(kind='box')
-# %%
-df3 = pd.DataFrame({'x': [1, 2, 3, 4, 5], 'y': [
-                   10, 20, 30, 40, 50], 'z': [5, 4, 3, 2, 1]})
+
+df3 = pd.DataFrame({'x': [1, 2, 3, 4, 5],
+                    'y': [10, 20, 30, 40, 50],
+                    'z': [5, 4, 3, 2, 1]})
 df3
 
 # %%
