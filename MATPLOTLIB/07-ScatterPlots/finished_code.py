@@ -17,10 +17,5 @@ cbar.set_label('Like/Dislike Ratio')
 plt.xscale('log')
 plt.yscale('log')
 
-plt.title('Trending YouTube Videos')
-plt.xlabel('View Count')
-plt.ylabel('Total Likes')
-
-plt.tight_layout()
 
 plt.show()

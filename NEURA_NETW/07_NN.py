@@ -7,14 +7,4 @@ import nnfs
 nnfs.init()
 
 layer_outputs = [[4.8, 1.21, 2.35],
-                 [8.9, -1.81, .2],
-                 [1.4, 1.051, .026]]
-
-
-exp_values = np.exp(layer_outputs)
-norm_values = exp_values / np.sum(exp_values, axis=1, keepdims=True)
-
-print(norm_values)
-
-# %%
-print(sum(exp_values))
+                 [8.9, -1.81, .
