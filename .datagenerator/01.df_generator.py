@@ -21,8 +21,7 @@ dates = []
 for _ in range(20):
     fake_date = fake.date_between(start_date=start_date, end_date='+1y')
     dates.append(fake_date)
-
-print(dates)
+    print(fake_date)
 
 df1 = pd.DataFrame(np.random.randn(20, 4))
 print(df1)
@@ -35,5 +34,6 @@ df1 = df1.sort_values('Date')
 print(df1)
 
 df1.set_index('Date')
-df1.drop(index, inplace=True)
+
+df1.reset_index(drop=True, inplace=True)
 print(df1)
