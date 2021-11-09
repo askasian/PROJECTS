@@ -21,10 +21,10 @@ import os
 
 # new folder path (may need to alter for Windows OS)
 # change path to your path
-ORI_PATH = '/usr/share/backgrounds/'
+ORI_PATH = "/usr/share/backgrounds/"
 NEW_SIZEX = 1920
 NEW_SIZEY = 1080
-PATH = '../DATA/NEW-RESIZED-DIR'  # the path where to save resized images
+PATH = "../DATA/NEW-RESIZED-DIR"  # the path where to save resized images
 
 # create new folder
 if not os.path.exists(PATH):
@@ -33,13 +33,13 @@ if not os.path.exists(PATH):
 # loop over existing images and resize
 # change path to your path
 for filename in glob.glob(
-    ORI_PATH + '**/*.*'
+    ORI_PATH + "**/*.*"
 ):  # path of raw images with is subdirectory
     img = Image.open(filename).resize((NEW_SIZEX, NEW_SIZEY))
 
     # get the original location and find its subdir
     loc = os.path.split(filename)[0]
-    subdir = loc.split('\\')[1]
+    subdir = loc.split("\\")[1]
 
     # assembly with its full new directory
     fullnew_subdir = PATH + "/" + subdir
@@ -50,4 +50,4 @@ for filename in glob.glob(
         os.makedirs(fullnew_subdir)
 
     # save resized images to new folder with existing filename
-    img.save('{}{}{}'.format(fullnew_subdir, '/', name))
+    img.save("{}{}{}".format(fullnew_subdir, "/", name))
