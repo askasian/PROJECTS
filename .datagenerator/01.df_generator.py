@@ -19,21 +19,23 @@ fake = Faker()
 start_date = datetime.date(year=2020, month=1, day=1)
 dates = []
 for _ in range(20):
-    fake_date = fake.date_between(start_date=start_date, end_date='+1y')
+    fake_date = fake.date_between(start_date=start_date, end_date="+1y")
     dates.append(fake_date)
     print(fake_date)
 
 df1 = pd.DataFrame(np.random.randn(20, 4))
 print(df1)
 
-df1['Date'] = dates
-
+df1["Date"] = dates
 print(df1)
 
-df1 = df1.sort_values('Date')
+df1 = df1.sort_values("Date")
 print(df1)
 
-df1.set_index('Date')
+# df1.reset_index()
+# print(df1)
 
-df1.reset_index(drop=True, inplace=True)
+df1.set_index("Date")
 print(df1)
+
+df1.to_csv("DF1.csv", index=False)
