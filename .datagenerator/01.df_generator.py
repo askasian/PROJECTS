@@ -1,4 +1,5 @@
 from faker import Faker
+
 import datetime
 import numpy as np
 import pandas as pd
@@ -27,5 +28,12 @@ df1 = pd.DataFrame(np.random.randn(20, 4))
 print(df1)
 
 df1['Date'] = dates
-df1.index = 'Date'
+
+print(df1)
+
+df1 = df1.sort_values('Date')
+print(df1)
+
+df1.set_index('Date')
+df1.drop(index, inplace=True)
 print(df1)
