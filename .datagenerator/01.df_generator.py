@@ -39,3 +39,4 @@ df1.set_index("Date")
 print(df1)
 
 df1.to_csv("~/PROJECTS/DATA_SCI/Pandas/DF1.csv", index=False)
+df1.to_csv("DF1.csv", index=False)
