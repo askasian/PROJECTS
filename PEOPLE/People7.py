@@ -4,12 +4,12 @@ from faker import Faker
 fake = Faker()
 stat = []
 unit = []
-year = 3000
+year = 2000
 
 experience_to_show = 15
-initial_population = 7000
+initial_population = 3500
 sexs = ['male', 'female']
-cords = [100, 100]
+cords = [200, 200]
 area = (cords[0] * cords[1])
 
 namef = [fake.first_name_male() for _ in range(40)]
