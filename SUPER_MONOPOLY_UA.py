@@ -1,7 +1,8 @@
 class Player:
-    def __init__(self):
+    def __init__(self, name):
         # super().__init__()
         # self.ide = ide
+        self.name = name
         # self.position = position
         # self.education = education
         # self.capital = capital
@@ -11,9 +12,9 @@ class Player:
         pass
 
 
-class Place(Player):
+class Place:
     def __init__(self):
-        super().__init__()
+        # super().__init__()
         # ide,
         # tip,
         # price,
@@ -60,20 +61,17 @@ Bank1.name = "Alfa Bank"
 
 Bank1.upd_level()
 
-Dem = Player()
-Sasha = Player()
-Nata = Player()
+players = []
+player_names = ["Dem", "Sasha", "Nata"]
+for i in range(3):
+    players.append(Player(player_names[i]))
 
-Dem.ide = 1
-Sasha.ide = 2
-Nata.ide = 3
+print(players[1].name)
 
-Dem.account = 0.00
 
-Dem.educ_k = 1
-Dem.tax_k = 1
-Dem.ins_k = 1
+# Dem.educ_k = 1
+# Dem.tax_k = 1
+# Dem.ins_k = 1
 
 
 print(Bank1.price)
-print(Dem.ide)
