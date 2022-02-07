@@ -1,15 +1,4 @@
-class Player:
-    def __init__(self, name):
-        # super().__init__()
-        # self.ide = ide
-        self.name = name
-        # self.position = position
-        # self.education = education
-        # self.capital = capital
-        # self.bank_acc = bank_acc
-        # self.ensurance = ensurance
-        # self.credit = credit
-        pass
+import pandas as pd
 
 
 class Place:
@@ -40,15 +29,30 @@ class Place:
     def upd_level(self):
         if self.level < 3:
             self.level += 1
-            self.price += self.price * 0.1
-            self.price_level += self.price_level * 0.1
-            self.payment_perhit += self.payment_perhit * 0.1
+            self.price += self.price * 0.15
+            self.price_level += self.price_level * 0.15
+            self.payment_perhit += self.payment_perhit * 0.15
             print("Level of {} raised to {}".format(self.name, self.level))
             print("Price now is {}".format(self.price))
             print("Price to raise level is {}".format(self.price_level))
             print("Hit payment is {}".format(self.payment_perhit))
         else:
             print("Level of {} is maximal".format(self.name))
+
+
+class Player:
+    def __init__(self, name, ide, position, education, capital):
+        # super().__init__()
+        self.ide = ide
+        self.name = name
+        self.position = position
+        self.education = education
+        self.capital = capital
+        # self.bank_acc = bank_acc
+        # self.ensurance = ensurance[]
+        # self.credit = credit[]
+        # self.owner = owner[]
+        # pass
 
 
 Bank1 = Place()
@@ -60,13 +64,38 @@ Bank1.payment_perhit = 4000.00
 Bank1.name = "Alfa Bank"
 
 Bank1.upd_level()
+Bank1.upd_level()
+Bank1.upd_level()
 
-players = []
-player_names = ["Dem", "Sasha", "Nata"]
-for i in range(3):
-    players.append(Player(player_names[i]))
 
-print(players[1].name)
+def Players_init():
+    players = pd.Series
+    # players = []
+    player_names = ["Dem", "Sasha", "Nata", "Lena"]
+    for i in range(len(player_names)):
+        players.append(
+            {
+                Player.name=player_names[i],
+                Player.ide=i,
+                Player.position=0,
+                Player.education=0,
+                Player.capital=500000.00,
+            }
+        )
+
+    print(
+        players
+        # players[i].name,
+        # "\t",
+        # players[i].ide,
+        # "\t",
+        # players[i].position,
+        # "\t",
+        # players[i].education,
+        # "\t",
+        # players[i].capital,
+        # "\t",
+    )
 
 
 # Dem.educ_k = 1
@@ -75,3 +104,4 @@ print(players[1].name)
 
 
 print(Bank1.price)
+Players_init()
