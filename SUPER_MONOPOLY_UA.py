@@ -1,7 +1,14 @@
 import pandas as pd
 
 
-class Place:
+class Subscriptable(type):
+    def __getitem__(self, k):
+        return self.items[k]
+
+
+class Place(metaclass=Subscriptable):
+    items = []
+
     def __init__(self):
         # super().__init__()
         # ide,
@@ -10,6 +17,7 @@ class Place:
         # price_level,
         # owner,
         # level,
+        # events[]
         # tax_permove,
         # payment_perhit,
         # tax_influence,
@@ -40,11 +48,13 @@ class Place:
             print("Level of {} is maximal".format(self.name))
 
 
-class Player:
+class Player(metaclass=Subscriptable):
+    items = []
+
     def __init__(self, name, ide, position, education, capital):
         # super().__init__()
         self.ide = ide
-        self.name = name
+        self.name = self.__name__
         self.position = position
         self.education = education
         self.capital = capital
@@ -52,50 +62,77 @@ class Player:
         # self.ensurance = ensurance[]
         # self.credit = credit[]
         # self.owner = owner[]
-        # pass
+        Player.items.append(self)
 
-
-Bank1 = Place()
-Bank1.pos = 4
-Bank1.level = 1
-Bank1.price = 150000.00
-Bank1.price_level = 15000.00
-Bank1.payment_perhit = 4000.00
-Bank1.name = "Alfa Bank"
-
-Bank1.upd_level()
-Bank1.upd_level()
-Bank1.upd_level()
-
-
-def Players_init():
-    players = pd.Series
-    # players = []
-    player_names = ["Dem", "Sasha", "Nata", "Lena"]
-    for i in range(len(player_names)):
-        players.append(
-            {
-                Player.name=player_names[i],
-                Player.ide=i,
-                Player.position=0,
-                Player.education=0,
-                Player.capital=500000.00,
-            }
+    def __str__(self):
+        return "{}\t {}\t {}\t {}\t {}".format(
+            self.name, self.ide, self.position, self.education, self.capital
         )
 
-    print(
-        players
-        # players[i].name,
-        # "\t",
-        # players[i].ide,
-        # "\t",
-        # players[i].position,
-        # "\t",
-        # players[i].education,
-        # "\t",
-        # players[i].capital,
-        # "\t",
-    )
+
+# Bank1 = Place()
+# Bank1.pos = 4
+# Bank1.level = 1
+# Bank1.price = 150000.00
+# Bank1.price_level = 15000.00
+# Bank1.payment_perhit = 4000.00
+# Bank1.name = "Alfa Bank"
+
+# Bank1.upd_level()
+# Bank1.upd_level()
+# Bank1.upd_level()
+
+# print(Bank1.price)
+
+# Dem = Player("Dem", 1, 0, 0, 400000.00)
+names = ["Dem", "Sasha", "Nata", "Lena"]
+
+
+def players_in():
+    for i in range(len(names)):
+        Player.__name__ = names[i]
+        Player.ide = i
+        Player.position = 0
+        Player.education = 0
+        Player.capital = 0
+        # print(str(Player.items[i]))
+
+
+# Dem = Player("Dem", 1, 0, 0, 400000.00)
+
+players_in()
+print(Lena.ide, Lena.capital)
+
+NUM_CELLS = 100
+banks = 3
+# food_shops =
+# food_corts=
+# malls=
+# repair_shops =
+# gas_stations=
+# airports=
+# train_stations=
+# factories=
+# developers=
+# residentals=
+# villas=
+# terminals=
+
+# tax_offices=
+# police_stations=
+# gails=
+# exchanges=
+# pharmacies=
+# hospitals=
+# agrocomplexes=
+# freecells=
+# scools=
+# colleges=1
+# universities=1
+# insurances=
+
+
+# cells_in()
 
 
 # Dem.educ_k = 1
@@ -103,5 +140,5 @@ def Players_init():
 # Dem.ins_k = 1
 
 
-print(Bank1.price)
-Players_init()
+# print("\n", Dem.capital)
+# print("\n", Players.items[1])
