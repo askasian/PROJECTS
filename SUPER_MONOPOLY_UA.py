@@ -95,7 +95,7 @@ def players_in():
         Player.position = 0
         Player.education = 0
         Player.capital = 0
-        # print(str(Player.items[i]))
+        print(str(Player.items[i]))
 
 
 # Dem = Player("Dem", 1, 0, 0, 400000.00)
