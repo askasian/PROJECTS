@@ -13,4 +13,4 @@ for i in range(1, 11):
     name = "obj_{}".format(i)
     my_objects[name] = my_objects.get(name, MyClass(name=name))
 
-print(MyClass.pretty_print_name(my_objects[obj_2]))
+print(MyClass.pretty_print_name(my_objects["obj_2"]))
