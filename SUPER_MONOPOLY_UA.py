@@ -1,3 +1,4 @@
+import random
 import pandas as pd
 
 
@@ -35,11 +36,12 @@ class Place(metaclass=Subscriptable):
         pass
 
     def upd_level(self):
+        up_perc = 0.15
         if self.level < 3:
             self.level += 1
-            self.price += self.price * 0.15
-            self.price_level += self.price_level * 0.15
-            self.payment_perhit += self.payment_perhit * 0.15
+            self.price += self.price * up_perc
+            self.price_level += self.price_level * up_perc
+            self.payment_perhit += self.payment_perhit * up_perc
             print("Level of {} raised to {}".format(self.name, self.level))
             print("Price now is {}".format(self.price))
             print("Price to raise level is {}".format(self.price_level))
@@ -51,23 +53,21 @@ class Place(metaclass=Subscriptable):
 class Player(metaclass=Subscriptable):
     items = []
 
-    def __init__(self, name, ide, position, education, capital):
+    def __init__(self, *args, **kwargs):
         # super().__init__()
-        self.ide = ide
-        self.name = self.__name__
-        self.position = position
-        self.education = education
-        self.capital = capital
+        # self.ide =ide
+        # self.name = name
+        # self.position = position
+        # self.education = education
+        # self.capital = capital
         # self.bank_acc = bank_acc
-        # self.ensurance = ensurance[]
-        # self.credit = credit[]
-        # self.owner = owner[]
+        # self.ensurance = ensurance
+        # self.credit = credit
+        # self.owner = owner
         Player.items.append(self)
 
     def __str__(self):
-        return "{}\t {}\t {}\t {}\t {}".format(
-            self.name, self.ide, self.position, self.education, self.capital
-        )
+        return "{ }\n{ }".format(*args, **kwargs)
 
 
 # Bank1 = Place()
@@ -84,21 +84,17 @@ class Player(metaclass=Subscriptable):
 
 # print(Bank1.price)
 
-# Dem = Player("Dem", 1, 0, 0, 400000.00)
-names = ["Dem", "Sasha", "Nata", "Lena"]
+Sasha = Player(ide=1, name="Sasha")
+Demi = Player(ide=2, name="Demi")
+Lena = Player(ide=3, name="Lena")
+Nata = Player(ide=4, name="Nata")
 
 
 def players_in():
-    for i in range(len(names)):
-        Player.__name__ = names[i]
-        Player.ide = i
-        Player.position = 0
-        Player.education = 0
-        Player.capital = 0
+
+    for i in range(len(Player.items)):
         print(str(Player.items[i]))
 
-
-# Dem = Player("Dem", 1, 0, 0, 400000.00)
 
 players_in()
 print(Lena.ide, Lena.capital)
