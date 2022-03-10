@@ -1,4 +1,5 @@
 from operator import getitem
+pacman -S ms-office-online
 
 
 class Subscriptable(type):
