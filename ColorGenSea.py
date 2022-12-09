@@ -1,6 +1,6 @@
 import seaborn as sns
 
-palette = sns.color_palette(None, 10, desat=None)
+palette = sns.color_palette(None, 4, desat=None)
 
 
 def init_colors():
