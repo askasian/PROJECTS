@@ -1,5 +1,4 @@
 from operator import getitem
-pacman -S ms-office-online
 
 
 class Subscriptable(type):
@@ -16,7 +15,7 @@ class Player(metaclass=Subscriptable):
         self.name = name
         self.position = position
         self.education = education
-        self.capital = capital
+        self.capital = capita
         # self.bank_acc = bank_acc
         # self.ensurance = ensurance[]
         # self.credit = credit[]
