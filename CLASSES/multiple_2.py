@@ -4,7 +4,7 @@ class MyClass:
     def __init__(self):
         pass
 
-    def do_sth():
+    def do_sth(a):
         print("doing now in MyClass!")
 
 
