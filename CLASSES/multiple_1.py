@@ -1,5 +1,5 @@
 class MyClass:
-    # objs = []
+    obj = []
 
     def __init__(self):
         pass
@@ -9,8 +9,7 @@ class MyClass:
 
 
 objs = [MyClass() for i in range(10)]
-# for obj in objs:
-#     obj.append(objs)
+    obj.append(objs)
 
 
 objs[2].do_sth()
